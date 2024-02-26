@@ -8,11 +8,11 @@ class Model:
     pass
   
   def load_model():
-    model = AutoModelForCausalLM.from_pretrained("/workspace/ml-service/model",
+    model = AutoModelForCausalLM.from_pretrained("model",
                                                  torch_dtype=torch.float16,
                                                  device_map ="auto")
     return model
 
   def load_tokenizer():
-    tokenizer = AutoTokenizer.from_pretrained("/workspace/ml-service/model")
+    tokenizer = AutoTokenizer.from_pretrained("model")
     return tokenizer
