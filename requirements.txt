@@ -1,0 +1,5 @@
+fastapi==0.110.0
+sqlparse==0.4.4
+torch==2.2.1
+transformers==4.38.1
+uvicorn==0.27.1
