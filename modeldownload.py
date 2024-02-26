@@ -11,7 +11,7 @@ model = AutoModelForCausalLM.from_pretrained(
         device_map=0
     )
 
-save_dir = "/workspace/ml-service/model"
+save_dir = "model"
 
 tokenizer.save_pretrained(save_dir)
 model.save_pretrained(save_dir)
