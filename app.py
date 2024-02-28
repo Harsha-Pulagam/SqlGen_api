@@ -2,13 +2,11 @@ from fastapi import FastAPI, APIRouter
 import uvicorn
 from inference import Inference
 from model import Model
-from sqlcoder import Sqlcoder
 import logging
 
 logging.basicConfig(level = logging.INFO)
 
 app = FastAPI()
-sql = Sqlcoder()
 router = APIRouter()
 inference = Inference()
 
@@ -20,7 +18,7 @@ async def home():
 async def data(data: dict):
   try:
     input_text = data["text"]
-    res = sql.sql_generator(input_text, inference)
+    res = inference.sql_generator(input_text)
     return res
   except Exception as e:
     log.error("Something went wrong")
